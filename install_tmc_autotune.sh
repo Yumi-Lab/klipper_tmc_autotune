@@ -34,4 +34,3 @@ if ! grep -Fxq "[include tmc_autotune.cfg]" "/home/pi/printer_data/config/moonra
 else
     echo "La ligne '[include tmc_autotune.cfg]' est déjà présente dans /home/pi/printer_data/config/moonraker.conf"
 fi
-
