@@ -4,15 +4,6 @@
 echo "Cloner le dépôt"
 wget -O - https://raw.githubusercontent.com/andrewmcgr/klipper_tmc_autotune/main/install.sh | bash
 
-echo "Changer de répertoire pour celui du dépôt cloné"
-cd klipper_tmc_autotune || { echo "Échec du changement de répertoire"; exit 1; }
-
-echo "Rendre le script install.sh exécutable"
-chmod +x install.sh
-
-echo "Exécuter le script install.sh"
-sudo ./install.sh
-
 echo "Écrire le contenu dans le fichier de configuration"
 cat <<EOL > /home/pi/printer_data/config/tmc_autotune.cfg
 [update_manager klipper_tmc_autotune]
