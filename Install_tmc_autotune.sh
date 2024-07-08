@@ -49,3 +49,4 @@ if ! grep -Fxq "[include tmc_autotune.cfg]" "$MOONRAKER_CONF"; then
 else
     echo "La ligne '[include tmc_autotune.cfg]' est déjà présente dans $MOONRAKER_CONF"
 fi
+
