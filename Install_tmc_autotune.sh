@@ -1,19 +1,19 @@
 #!/bin/bash
 
 
-echo Cloner le dépôt
+echo "Cloner le dépôt"
 git clone https://github.com/andrewmcgr/klipper_tmc_autotune.git
 
-echo Changer de répertoire pour celui du dépôt cloné
+echo "Changer de répertoire pour celui du dépôt cloné"
 cd klipper_tmc_autotune || { echo "Échec du changement de répertoire"; exit 1; }
 
-echo Rendre le script install.sh exécutable
+echo "Rendre le script install.sh exécutable"
 chmod +x install.sh
 
-echo Exécuter le script install.sh
+echo "Exécuter le script install.sh"
 sudo ./install.sh
 
-echo Écrire le contenu dans le fichier de configuration
+echo "Écrire le contenu dans le fichier de configuration"
 cat <<EOL > /home/pi/printer_data/config/tmc_autotune.cfg
 [update_manager klipper_tmc_autotune]
 type: git_repo
@@ -27,7 +27,7 @@ EOL
 
 echo "Fichier de configuration créé avec succès à /home/pi/printer_data/config/tmc_autotune.cfg"
 
-echo Ajouter la ligne [include tmc_autotune.cfg] au début de moonraker.conf
+echo "Ajouter la ligne [include tmc_autotune.cfg] au début de moonraker.conf"
 if ! grep -Fxq "[include tmc_autotune.cfg]" "/home/pi/printer_data/config/moonraker.conf"; then
     (echo "[include tmc_autotune.cfg]"; cat "/home/pi/printer_data/config/moonraker.conf") > temp.conf && mv temp.conf "/home/pi/printer_data/config/moonraker.conf"
     echo "Ligne '[include tmc_autotune.cfg]' ajoutée au début de /home/pi/printer_data/config/moonraker.conf"
