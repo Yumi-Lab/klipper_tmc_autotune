@@ -2,7 +2,7 @@
 
 
 echo "Cloner le dépôt"
-git clone https://github.com/andrewmcgr/klipper_tmc_autotune.git
+wget -O - https://raw.githubusercontent.com/andrewmcgr/klipper_tmc_autotune/main/install.sh | bash
 
 echo "Changer de répertoire pour celui du dépôt cloné"
 cd klipper_tmc_autotune || { echo "Échec du changement de répertoire"; exit 1; }
