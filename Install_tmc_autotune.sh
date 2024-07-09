@@ -2,13 +2,13 @@
 
 # Définir l'URL du dépôt Git
 REPO_URL="https://github.com/andrewmcgr/klipper_tmc_autotune.git"
-
+cd /home/pi
 # Cloner le dépôt
 git clone "$REPO_URL"
 
 # Extraire le nom du répertoire à partir de l'URL du dépôt
 REPO_DIR=$(basename "$REPO_URL" .git)
-
+home="/home/pi"
 # Changer de répertoire pour celui du dépôt cloné
 cd "$REPO_DIR" || { echo "Échec du changement de répertoire"; exit 1; }
 
