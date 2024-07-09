@@ -20,7 +20,7 @@ chmod +x install.sh
 
 # Définir le chemin du fichier de configuration
 CONFIG_DIR="/home/pi/printer_data/config"
-CONFIG_FILE="$CONFIG_DIR/tmc_autotune.cfg"
+CONFIG_FILE="$CONFIG_DIR/update_tmc_autotune.cfg"
 
 # Créer le répertoire de configuration s'il n'existe pas
 mkdir -p "$CONFIG_DIR"
@@ -43,10 +43,10 @@ echo "Fichier de configuration créé avec succès à $CONFIG_FILE"
 MOONRAKER_CONF="$CONFIG_DIR/moonraker.conf"
 
 # Ajouter la ligne [include tmc_autotune.cfg] au début de moonraker.conf
-if ! grep -Fxq "[include tmc_autotune.cfg]" "$MOONRAKER_CONF"; then
-    (echo "[include tmc_autotune.cfg]"; cat "$MOONRAKER_CONF") > temp.conf && mv temp.conf "$MOONRAKER_CONF"
-    echo "Ligne '[include tmc_autotune.cfg]' ajoutée au début de $MOONRAKER_CONF"
+if ! grep -Fxq "[include update_tmc_autotune.cfg]" "$MOONRAKER_CONF"; then
+    (echo "[include update_tmc_autotune.cfg]"; cat "$MOONRAKER_CONF") > temp.conf && mv temp.conf "$MOONRAKER_CONF"
+    echo "Ligne '[include update_tmc_autotune.cfg]' ajoutée au début de $MOONRAKER_CONF"
 else
-    echo "La ligne '[include tmc_autotune.cfg]' est déjà présente dans $MOONRAKER_CONF"
+    echo "La ligne '[include update_tmc_autotune.cfg]' est déjà présente dans $MOONRAKER_CONF"
 fi
 
