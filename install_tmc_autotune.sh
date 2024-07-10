@@ -50,4 +50,5 @@ else
     echo "La ligne '[include update_tmc_autotune.cfg]' est déjà présente dans $MOONRAKER_CONF"
 fi
 
-
+# Créer répertoire tmc autotune
+mkdir -p /home/pi/klipper_tmc_autotun
