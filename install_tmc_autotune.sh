@@ -4,6 +4,7 @@
 REPO_URL="https://github.com/andrewmcgr/klipper_tmc_autotune.git"
 
 # Cloner le dépôt
+cd /home/pi/
 git clone "$REPO_URL"
 
 # Extraire le nom du répertoire à partir de l'URL du dépôt
@@ -51,4 +52,4 @@ else
 fi
 
 # Créer répertoire tmc autotune
-mkdir -p /home/pi/klipper_tmc_autotune
+#mkdir -p /home/pi/klipper_tmc_autotune
