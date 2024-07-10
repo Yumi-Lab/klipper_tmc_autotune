@@ -51,4 +51,4 @@ else
 fi
 
 # Créer répertoire tmc autotune
-mkdir -p /home/pi/klipper_tmc_autotun
+mkdir -p /home/pi/klipper_tmc_autotune
