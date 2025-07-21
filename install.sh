@@ -14,10 +14,10 @@ export LC_ALL=C
 
 
 function preflight_checks {
-    if [ "$EUID" -eq 0 ]; then
+    #if [ "$EUID" -eq 0 ]; then
     #    echo "[PRE-CHECK] This script must not be run as root!"
     #    exit -1
-    fi
+    #fi
 
     if [ "$(sudo systemctl list-units --full -all -t service --no-legend | grep -F 'klipper.service')" ]; then
         printf "[PRE-CHECK] Klipper service found! Continuing...\n\n"
