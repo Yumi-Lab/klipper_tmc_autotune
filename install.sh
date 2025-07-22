@@ -25,7 +25,7 @@ function preflight_checks {
     #    echo "[ERROR] Klipper service not found, please install Klipper first!"
     #    exit -1
     #fi
-
+}
 
 function check_download {
     local autotunedirname autotunebasename
