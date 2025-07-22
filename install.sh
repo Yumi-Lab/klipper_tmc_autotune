@@ -1,7 +1,7 @@
 #!/bin/bash
 
 KLIPPER_PATH="/home/pi/klipper"
-AUTOTUNETMC_PATH="${HOME}/klipper_tmc_autotune"
+AUTOTUNETMC_PATH="/home/pi/klipper_tmc_autotune"
 
 if [[ -e ${KLIPPER_PATH}/klippy/plugins/ ]]; then
     KLIPPER_PLUGINS_PATH="${KLIPPER_PATH}/klippy/plugins/"
