@@ -14,17 +14,17 @@ export LC_ALL=C
 
 
 function preflight_checks {
-    #if [ "$EUID" -eq 0 ]; then
-    #    echo "[PRE-CHECK] This script must not be run as root!"
-    #    exit -1
-    #fi
+    if [ "$EUID" -eq 0 ]; then
+        echo "[PRE-CHECK] This script must not be run as root!"
+        exit -1
+    fi
 
-    #if [ "$(sudo systemctl list-units --full -all -t service --no-legend | grep -F 'klipper.service')" ]; then
-    #    printf "[PRE-CHECK] Klipper service found! Continuing...\n\n"
-    #else
-    #    echo "[ERROR] Klipper service not found, please install Klipper first!"
-    #    exit -1
-    #fi
+    if [ "$(sudo systemctl list-units --full -all -t service --no-legend | grep -F 'klipper.service')" ]; then
+        printf "[PRE-CHECK] Klipper service found! Continuing...\n\n"
+    else
+        echo "[ERROR] Klipper service not found, please install Klipper first!"
+        exit -1
+    fi
 }
 
 function check_download {
@@ -66,7 +66,7 @@ printf "======================================\n\n"
 
 
 # Run steps
-preflight_checks
+#preflight_checks
 check_download
 link_extension
-restart_klipper
+#restart_klipper
