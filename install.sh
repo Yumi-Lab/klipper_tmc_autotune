@@ -67,6 +67,6 @@ printf "======================================\n\n"
 
 # Run steps
 #preflight_checks
-check_download
+#check_download
 link_extension
 #restart_klipper
