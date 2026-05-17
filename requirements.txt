@@ -1,0 +1,3 @@
+# klipper_tmc_autotune dependencies
+# Increment version below to force install.sh re-execution via Moonraker update manager
+# version: 1
